@@ -1,0 +1,15 @@
+
+meanOfClusters = zeros(58,256);
+for idx = 1:582
+    
+   for idxClusters = 1: 58
+      
+       if (clust(idx) == idxClusters)
+          meanOfClusters(idx,:)  = meanOfClusters(idx,:) + dataMatrix(idx, :);
+           
+           
+       end
+       
+   end
+    
+end

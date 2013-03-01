@@ -1,0 +1,9 @@
+
+close all;
+
+for imno = 1: 23
+    i = imread(['c:\pics\', int2str(imno), '.jpg']);
+
+    figure, edge(rgb2gray(i), 'prewitt');
+end
+

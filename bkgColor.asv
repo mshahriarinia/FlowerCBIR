@@ -1,0 +1,50 @@
+function ret = bkgColor( image )
+
+imdata = rgb2hsv(image);
+
+%hsv = rgb2hsv(image);
+% ycc = rgb2ycbcr(image);
+% figure, imshow(image), title('rgb');
+% figure,imshow(hsv), title('hsv');
+%figure,imshow(ycc), title('ycc');
+
+sidePercentage = 0.07;
+
+row =  size(imdata, 1);
+col = size(imdata, 2);
+
+rowl = round(sidePercentage * row);
+coll = round(sidePercentage * col);
+
+% partNW = imdata(1:rowl, 1:coll, :);
+% partNE = imdata(1:rowl, col - coll + 1:col, :);
+% partSW = imdata(row - rowl + 1:row, 1:coll, :);
+% partSE = imdata(row - rowl + 1:row, col - coll + 1:col, :);
+
+partL = imdata(:, 1:coll, :);
+partT = imdata(1:rowl, :, :);
+partR = imdata(:, col - coll + 1:col, :);
+partB = imdata(row - rowl + 1:row, :, :);
+
+% figure, imshow(partL);
+% figure, imshow(partR);
+% figure, imshow(partT);
+% figure, imshow(partB);
+
+
+d = double(partL);
+s = single(partL);
+
+t = clusterdata(imdata(:,:,1),'maxclust',3);
+
+
+figure,
+
+
+%       ============================  Note  ===============================
+
+%perform k meanse to get the best colors of the border to be removed
+%the colors that appear nmore than 20% of the background are to be removed
+
+
+%grayscale torgb : RGB = cat(3,I,I,I);

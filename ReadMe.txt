@@ -1,0 +1,1 @@
+Content-based Image Retrieval (CBIR) for a databse of images of flowers. Given a flower picture we will show the most similar flowers in the databse. As part fo the graduate course: Image Processing Dept. Computer Engineering, Tarbiat Modares University, Tehran, Iran. Instructor Dr. Moghadam. 2007-2008
